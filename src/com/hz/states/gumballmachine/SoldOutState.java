@@ -2,8 +2,8 @@ package com.hz.states.gumballmachine;
 
 import com.hz.GumballMachine;
 
-public class SoldOut extends State {
-    public SoldOut(GumballMachine machine) {
+public class SoldOutState extends State {
+    public SoldOutState(GumballMachine machine) {
         super(machine);
     }
 

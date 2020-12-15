@@ -2,13 +2,13 @@ package com.hz.states.gumballmachine;
 
 import com.hz.GumballMachine;
 
-public class NoQuarter extends State {
-    public NoQuarter(GumballMachine machine) {
+public class NoQuarterState extends State {
+    public NoQuarterState(GumballMachine machine) {
         super(machine);
     }
 
     public String insertQuarter() {
-        this.machine.setState(new HasQuarter(this.machine));
+        this.machine.setState(new HasQuarterState(this.machine));
         return "You inserted a quarter";
     }
 

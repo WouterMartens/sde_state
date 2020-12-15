@@ -2,8 +2,8 @@ package com.hz.states.gumballmachine;
 
 import com.hz.GumballMachine;
 
-public class HasQuarter extends State {
-    public HasQuarter(GumballMachine machine) {
+public class HasQuarterState extends State {
+    public HasQuarterState(GumballMachine machine) {
         super(machine);
     }
 
@@ -12,12 +12,12 @@ public class HasQuarter extends State {
     }
 
     public String ejectQuarter() {
-        machine.setState(new NoQuarter(this.machine));
+        machine.setState(new NoQuarterState(this.machine));
         return "Quarter returned.";
     }
 
     public String turnCrank() {
-        machine.setState(new Sold(this.machine));
+        machine.setState(new SoldState(this.machine));
         return "You turned...";
     }
 

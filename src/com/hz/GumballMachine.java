@@ -1,7 +1,7 @@
 package com.hz;
 
-import com.hz.states.gumballmachine.HasQuarter;
-import com.hz.states.gumballmachine.NoQuarter;
+import com.hz.states.gumballmachine.HasQuarterState;
+import com.hz.states.gumballmachine.NoQuarterState;
 import com.hz.states.gumballmachine.State;
 
 public class GumballMachine {
@@ -12,7 +12,7 @@ public class GumballMachine {
     public GumballMachine(int count) {
         this.count = count;
         if (count > 0) {
-            state = new NoQuarter(this);
+            state = new NoQuarterState(this);
         }
     }
 
@@ -25,7 +25,7 @@ public class GumballMachine {
     }
 
     public void turnCrank() {
-        boolean toDispense = this.state instanceof HasQuarter;
+        boolean toDispense = this.state instanceof HasQuarterState;
 
         System.out.println(state.turnCrank());
 
@@ -40,7 +40,7 @@ public class GumballMachine {
 
     public void refill(int numGumBalls) {
         this.count = numGumBalls;
-        this.state = new NoQuarter(this);
+        this.state = new NoQuarterState(this);
     }
 
     public void setState(State state) {

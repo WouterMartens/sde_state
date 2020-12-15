@@ -2,8 +2,8 @@ package com.hz.states.gumballmachine;
 
 import com.hz.GumballMachine;
 
-public class Sold extends State {
-    public Sold(GumballMachine machine) {
+public class SoldState extends State {
+    public SoldState(GumballMachine machine) {
         super(machine);
     }
 
@@ -20,10 +20,10 @@ public class Sold extends State {
     public String dispense() {
         this.machine.setCount(this.machine.getCount() - 1);
         if (this.machine.getCount() == 0) {
-            this.machine.setState(new SoldOut(this.machine));
+            this.machine.setState(new SoldOutState(this.machine));
             return "You got the last one!";
         } else {
-            this.machine.setState(new NoQuarter(this.machine));
+            this.machine.setState(new NoQuarterState(this.machine));
             return "A gumball comes rolling out the slot.";
         }
     }
